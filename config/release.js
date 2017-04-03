@@ -8,7 +8,6 @@ module.exports = {
   message: "Bumped version to %@",
   manifest: [ 'package.json', 'bower.json' ],
   publish: true,
-  prerelease: true,
   format: 'YYYY-MM-DD',
   timezone: 'UTC'
 };
