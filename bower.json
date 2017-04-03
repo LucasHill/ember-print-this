@@ -1,4 +1,6 @@
 {
   "name": "ember-print-this",
-  "dependencies": {}
+  "dependencies": {
+    "printThis": "^1.9.0"
+  }
 }
