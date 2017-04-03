@@ -1,6 +1,6 @@
 {
   "name": "ember-print-this",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha.0",
   "description": "A simple wrapper for the printThis jQuery plugin.",
   "keywords": [
     "ember-addon",
@@ -33,6 +33,7 @@
     "ember-cli-htmlbars-inline-precompile": "^0.3.6",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-qunit": "^3.1.0",
+    "ember-cli-release": "^1.0.0-beta.2",
     "ember-cli-shims": "^1.0.2",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
@@ -43,7 +44,8 @@
     "ember-source": "~2.12.0",
     "ember-welcome-page": "^2.0.2",
     "loader.js": "^4.2.3",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "phantomjs-prebuilt": "^2.1.14"
   },
   "engines": {
     "node": ">= 4"
