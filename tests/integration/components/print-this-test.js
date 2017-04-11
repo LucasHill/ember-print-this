@@ -72,3 +72,21 @@ test('it does not auto print if not specified', function(assert) {
 
   assert.equal(printThisSpy.callCount, 0, 'Print this spy is never called');
 });
+
+test('it can call print from yielded action', function(assert) {
+  const jqueryStub = sinon.stub();
+  this.set('jQueryStub', jqueryStub);
+  const printThisSpy = sinon.spy();
+
+  jqueryStub.withArgs('.content__printThis').returns({ printThis: printThisSpy });
+
+  this.render(hbs`
+    {{#print-this _jQuery=jQueryStub as |doPrint|}}
+      <p>Some block stuff</p>
+      <button onclick={{doPrint}}>Heyo</button>
+    {{/print-this}}
+  `);
+
+  this.$('button').click();
+  assert.equal(printThisSpy.callCount, 1, 'Print this spy is called once');
+});

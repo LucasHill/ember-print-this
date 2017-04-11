@@ -27,8 +27,8 @@ A custom class can be provided so only part of the block is
 printed. 
 
 ```hbs
-{{#print-this printClass="content" autoPrint=true}}
-  <div class="content">
+{{#print-this printClass="customContent" autoPrint=true}}
+  <div class="customContent">
     <p>My cool content</p>
   </div>
 
@@ -36,6 +36,17 @@ printed.
 {{/print-this}}
 ```
 
+Printing can be executed via a yielded action to the block.
+
+```hbs
+{{#print-this printClass="customContent" as |doPrint|}}
+  <div class="customContent">
+    <p>My cool content</p>
+  </div>
+
+  <button onclick={{doPrint}}>Press me!</button>
+{{/print-this}}
+```
 ## Contributing to this addon
 ### Installation
 
