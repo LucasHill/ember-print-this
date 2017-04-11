@@ -1,6 +1,7 @@
-# ember-print-this
+# Ember-Print-This
 
-This README outlines the details of collaborating on this Ember addon.
+[![Build Status](https://travis-ci.org/LucasHill/ember-print-this.svg?branch=master)](https://travis-ci.org/LucasHill/ember-print-this)
+[![NPM][npm-badge-img]][npm-badge-link]
 
 ## Installation
 
