@@ -23,7 +23,20 @@ the autoPrint property as true in the component.
 {{/print-this}}
 ```
 
-## Developing this addon
+A custom class can be provided so only part of the block is
+printed. 
+
+```hbs
+{{#print-this printClass="content" autoPrint=true}}
+  <div class="content">
+    <p>My cool content</p>
+  </div>
+
+  <button>Press me!</button>
+{{/print-this}}
+```
+
+## Contributing to this addon
 ### Installation
 
 * `git clone <repository-url>` this repository

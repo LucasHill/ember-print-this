@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   layout,
   printClass: 'content__printThis',
   autoPrint: false,
+  
   didInsertElement() {
     if(this.get('autoPrint')) {
       this.get('_jQuery')(`.${this.get('printClass')}`).printThis();
