@@ -6,7 +6,7 @@ module.exports = {
     //noop
   },
   
-  afterInstall: function(options) {
+  afterInstall: function() {
     return this.addBowerPackageToProject('printThis', '1.9.0');
   }
 };
