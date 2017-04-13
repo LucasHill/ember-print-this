@@ -23,6 +23,22 @@ the autoPrint property as true in the component.
 {{/print-this}}
 ```
 
+All [options](https://github.com/jasonday/printThis#all-options)
+supported by printThis can be passed in through an options param 
+to the component. 
+
+```js
+printThisOptions: {
+  printDelay: 500
+}
+```
+
+```hbs
+{{#print-this options=printThisOptions autoPrint=true}}
+  <p>My cool content</p>
+{{/print-this}}
+```
+
 A custom class can be provided so only part of the block is
 printed. 
 
