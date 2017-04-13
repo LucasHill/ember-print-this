@@ -4,9 +4,9 @@ import layout from '../templates/components/print-this';
 export default Ember.Component.extend({
   layout,
   defaultPrintClass: 'content__printThis',
-  printClass: null,
+  printClass: null, //rename to print selector!
   autoPrint: false,
-  options: null, //pass in options hash for print this
+  options: null,
   actions: {
     doPrint() {
       this._print();
@@ -21,7 +21,9 @@ export default Ember.Component.extend({
   
   _print() {
     const printClass = this.get('printClass') || this.get('defaultPrintClass');
-    this.get('_jQuery')(`.${printClass}`).printThis();
+    const options = this.get('options') || {};
+    this.get('_jQuery')(`.${printClass}`).printThis(options);
   },
+  
   _jQuery: Ember.$
 });

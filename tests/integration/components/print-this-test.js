@@ -90,3 +90,22 @@ test('it can call print from yielded action', function(assert) {
   this.$('button').click();
   assert.equal(printThisSpy.callCount, 1, 'Print this spy is called once');
 });
+
+test('it calls printThis with options if specified', function(assert) {
+  const jqueryStub = sinon.stub();
+  this.set('jQueryStub', jqueryStub);
+  const options = { printDelay: 500 }
+  this.set('options', options);
+  const printThisSpy = sinon.spy();
+
+  jqueryStub.withArgs('.content__printThis').returns({ printThis: printThisSpy });
+
+  this.render(hbs`
+    {{#print-this options=options autoPrint=true _jQuery=jQueryStub}}
+      <p>Some block stuff</p>
+    {{/print-this}}
+  `);
+
+  assert.equal(printThisSpy.callCount, 1, 'Print this spy is called once');
+  assert.ok(printThisSpy.calledWith(options), 'Print this spy called with options hash');
+});
