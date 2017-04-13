@@ -41,15 +41,15 @@ test('it auto prints the block template if specified', function(assert) {
 test('it auto prints with the custom selector', function(assert) {
   const jqueryStub = sinon.stub();
   this.set('jQueryStub', jqueryStub);
-  const printClass = 'customClass';
-  this.set('printClass', printClass);
+  const printSelector = '.customClass';
+  this.set('printSelector', printSelector);
 
   const printThisSpy = sinon.spy();
 
-  jqueryStub.withArgs(`.${printClass}`).returns({ printThis: printThisSpy });
+  jqueryStub.withArgs(printSelector).returns({ printThis: printThisSpy });
 
   this.render(hbs`
-    {{#print-this autoPrint=true printClass=printClass _jQuery=jQueryStub}}
+    {{#print-this autoPrint=true printSelector=printSelector _jQuery=jQueryStub}}
       <p>Some block stuff</p>
     {{/print-this}}
   `);

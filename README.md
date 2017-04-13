@@ -39,23 +39,22 @@ printThisOptions: {
 {{/print-this}}
 ```
 
-A custom class can be provided so only part of the block is
-printed. 
+A custom selector can be provided so only part of the block is printed. 
 
 ```hbs
-{{#print-this printClass="customContent" autoPrint=true}}
+{{#print-this printSelector=".customContent" autoPrint=true}}
   <div class="customContent">
-    <p>My cool content</p>
+    <p>Will get printed</p>
   </div>
 
-  <button>Press me!</button>
+  <p>Won't be printed</p>
 {{/print-this}}
 ```
 
 Printing can be executed via a yielded action to the block.
 
 ```hbs
-{{#print-this printClass="customContent" as |doPrint|}}
+{{#print-this printSelector=".customContent" as |doPrint|}}
   <div class="customContent">
     <p>My cool content</p>
   </div>
@@ -66,7 +65,7 @@ Printing can be executed via a yielded action to the block.
 ## Contributing to this addon
 ### Installation
 
-* `git clone <repository-url>` this repository
+* `git clone git@github.com:LucasHill/ember-print-this.git` this repository
 * `cd ember-print-this`
 * `npm install`
 * `bower install`
