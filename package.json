@@ -12,7 +12,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/LucasHill/ember-print-this",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
