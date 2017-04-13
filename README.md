@@ -66,7 +66,7 @@ Printing can be executed via a yielded action to the block.
 ## Contributing to this addon
 ### Installation
 
-* `git clone <repository-url>` this repository
+* `git clone git@github.com:LucasHill/ember-print-this.git` this repository
 * `cd ember-print-this`
 * `npm install`
 * `bower install`
