@@ -22,8 +22,10 @@ export default Ember.Component.extend({
   _print() {
     const printSelector = this.get('printSelector') || `.${this.get('defaultPrintClass')}`;
     const options = this.get('options') || {};
-    this.get('_jQuery')(printSelector).printThis(options);
+    this._jQuery(printSelector).printThis(options);
   },
 
-  _jQuery: Ember.$
+  _jQuery: function(toSelect) {
+    return this.$(toSelect);
+  }
 });
