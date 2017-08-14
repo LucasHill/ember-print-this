@@ -22,6 +22,6 @@ module.exports = {
       files: ['printThis.js'],
     });
 
-    return new MergeTrees([vendorTree, printThisTree]);
+    return vendorTree ? new MergeTrees([vendorTree, printThisTree]): printThisTree;
   },
 };
