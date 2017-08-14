@@ -3,7 +3,6 @@
 
 var path = require('path');
 var Funnel = require('broccoli-funnel');
-var MergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
   name: 'ember-print-this',
@@ -17,11 +16,11 @@ module.exports = {
     app.import('vendor/printThis.js');
   },
 
-  treeForVendor(vendorTree) {
+  treeForVendor() {
     var printThisTree = new Funnel(path.dirname(require.resolve('print-this/printThis.js')), {
       files: ['printThis.js'],
     });
 
-    return new MergeTrees([vendorTree, printThisTree]);
+    return printThisTree;
   },
 };
