@@ -1,17 +1,18 @@
 {
   "name": "ember-print-this",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "1.0.0-beta.4",
+  "description": "A simple wrapper for the printThis jQuery plugin.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "printThis"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Lucas Hill",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/LucasHill/ember-print-this",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
