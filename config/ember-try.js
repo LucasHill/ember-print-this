@@ -1,5 +1,6 @@
 /* eslint-env node */
 module.exports = {
+  useYarn: true, //https://github.com/ember-cli/ember-try/issues/148
   scenarios: [
     {
       name: 'ember-lts-2.4',
@@ -30,6 +31,14 @@ module.exports = {
       npm: {
         devDependencies: {
           'ember-source': null
+        }
+      }
+    },
+    {
+      name: 'ember-lts-2.12',
+      npm: {
+        devDependencies: {
+          'ember-source': '~2.12.0'
         }
       }
     },
