@@ -21,8 +21,20 @@ export default Ember.Component.extend({
   
   _print() {
     const printSelector = this.get('printSelector') || `.${this.get('defaultPrintClass')}`;
-    const options = this.get('options') || {};
-    this._jQuery(printSelector).printThis(options);
+
+    const environment = Ember.getOwner(this).resolveRegistration('config:environment');
+    const mergedOptions = this._constructPrintOptions(environment);
+
+    this._jQuery(printSelector).printThis(mergedOptions);
+  },
+
+  _constructPrintOptions(environment) {
+    const base = environment.rootURL || environment.baseURL;
+    const options = base === '/' ? { } : { base };
+
+    const userOptions = this.get('options') || {};
+    
+    return Object.assign(options, userOptions)
   },
 
   _jQuery: function(toSelect) {
