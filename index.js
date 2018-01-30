@@ -4,6 +4,7 @@
 var path = require('path');
 var Funnel = require('broccoli-funnel');
 var MergeTrees = require('broccoli-merge-trees');
+var map = require('broccoli-stew').map;
 
 module.exports = {
   name: 'ember-print-this',
@@ -21,6 +22,8 @@ module.exports = {
     var printThisTree = new Funnel(path.dirname(require.resolve('print-this/printThis.js')), {
       files: ['printThis.js'],
     });
+
+    printThisTree = map(printThisTree, content => `if (typeof FastBoot === 'undefined') { ${content} }`);
 
     return vendorTree ? new MergeTrees([vendorTree, printThisTree]): printThisTree;
   },
