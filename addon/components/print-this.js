@@ -34,7 +34,7 @@ export default Ember.Component.extend({
 
     const userOptions = this.get('options') || {};
     
-    return Object.assign(options, userOptions)
+    return Ember.merge(options, userOptions)
   },
 
   _jQuery: function(toSelect) {
