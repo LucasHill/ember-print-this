@@ -62,6 +62,23 @@ Printing can be executed via a yielded action to the block.
   <button onclick={{doPrint}}>Press me!</button>
 {{/print-this}}
 ```
+
+Printing can be done via a service.
+```js
+export default Ember.Component.extend({
+  printThis: Ember.inject.service(),
+  actions: {
+    doPrint() {
+      const selector = '.myClass';
+      const options = {
+        printDelay: 500
+      }
+
+      this.get('printThis').print(selector, options);
+    }
+  },
+});
+```
 ## Contributing to this addon
 ### Installation
 
