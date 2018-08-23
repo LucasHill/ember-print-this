@@ -49,7 +49,7 @@ test('it calls service with correct default params on print', function(assert) {
   component._print();
 
   assert.equal(printThisSpy.callCount, 1);
-  assert.equal(printThisSpy.args[0][0], '.content__printThis');
+  assert.equal(printThisSpy.args[0][0], '');
   assert.deepEqual(printThisSpy.args[0][1], {});
 });
 
@@ -65,7 +65,7 @@ test('it uses passed in options on print', function(assert) {
   component._print();
 
   assert.equal(printThisSpy.callCount, 1);
-  assert.equal(printThisSpy.args[0][0], '.content__printThis');
+  assert.equal(printThisSpy.args[0][0], '');
   assert.deepEqual(printThisSpy.args[0][1], options);
 });
 
