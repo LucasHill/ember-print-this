@@ -1,6 +1,6 @@
 {
   "name": "ember-print-this",
-  "version": "1.0.0-beta.10",
+  "version": "1.0.0-beta.11",
   "description": "A simple wrapper for the printThis jQuery plugin.",
   "keywords": [
     "ember-addon",
