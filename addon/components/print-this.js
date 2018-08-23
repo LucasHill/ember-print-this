@@ -22,7 +22,7 @@ export default Ember.Component.extend({
   },
   
   _print() {
-    const printSelector = this.get('printSelector') || `.${this.get('defaultPrintClass')}`;
+    const printSelector = this.get('printSelector') || '';
 
     this.get('printThis').print(printSelector, this.get('options') || {}, this.$.bind(this));
   },

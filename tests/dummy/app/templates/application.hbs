@@ -5,5 +5,12 @@
   <div class="customContent">
     <h1>Hello Printer!</h1>
   </div>
-  <button onclick={{doPrint}}>Print!</button>
+  <button class='btn-1' onclick={{doPrint}}>Print Some!</button>
+{{/print-this}}
+
+{{#print-this options=options as |doPrint|}}
+  <div class="customContent">
+    <h1>Let's print it all!</h1>
+  </div>
+  <button class='btn-2' onclick={{doPrint}}>Print All!</button>
 {{/print-this}}

@@ -8,7 +8,7 @@ test('it works end to end', function(assert) {
   const stub = sinon.stub(window.$.fn, 'printThis');
   visit('/');
   andThen(() => {
-    click('button');
+    click('.btn-1');
   });
   
   andThen(() => {
