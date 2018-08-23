@@ -6,7 +6,7 @@ moduleForComponent('print-this', 'Integration | Component | print this', {
   integration: true
 });
 
-test('it renders', function(assert) {
+test('it renders the content of the block', function(assert) {
 
   this.render(hbs`{{print-this}}`);
 
@@ -23,33 +23,13 @@ test('it renders', function(assert) {
 });
 
 test('it auto prints the block template if specified', function(assert) {
-  const jqueryStub = sinon.stub();
-  this.set('jQueryStub', jqueryStub);
   const printThisSpy = sinon.spy();
-
-  jqueryStub.withArgs('.content__printThis').returns({ printThis: printThisSpy });
-
+  this.set('printThis', {
+    print: printThisSpy
+  });
+  
   this.render(hbs`
-    {{#print-this autoPrint=true _jQuery=jQueryStub}}
-      <p>Some block stuff</p>
-    {{/print-this}}
-  `);
-
-  assert.equal(printThisSpy.callCount, 1, 'Print this spy is called once');
-});
-
-test('it auto prints with the custom selector', function(assert) {
-  const jqueryStub = sinon.stub();
-  this.set('jQueryStub', jqueryStub);
-  const printSelector = '.customClass';
-  this.set('printSelector', printSelector);
-
-  const printThisSpy = sinon.spy();
-
-  jqueryStub.withArgs(printSelector).returns({ printThis: printThisSpy });
-
-  this.render(hbs`
-    {{#print-this autoPrint=true printSelector=printSelector _jQuery=jQueryStub}}
+    {{#print-this autoPrint=true printThis=printThis}}
       <p>Some block stuff</p>
     {{/print-this}}
   `);
@@ -58,30 +38,28 @@ test('it auto prints with the custom selector', function(assert) {
 });
 
 test('it does not auto print if not specified', function(assert) {
-  const jqueryStub = sinon.stub();
-  this.set('jQueryStub', jqueryStub);
   const printThisSpy = sinon.spy();
-
-  jqueryStub.returns({ printThis: printThisSpy });
+  this.set('printThis', {
+    print: printThisSpy
+  });
 
   this.render(hbs`
-    {{#print-this _jQuery=jQueryStub}}
+    {{#print-this printThis=printThis}}
       <p>Some block stuff</p>
     {{/print-this}}
   `);
 
-  assert.equal(printThisSpy.callCount, 0, 'Print this spy is never called');
+  assert.equal(printThisSpy.callCount, 0, 'Print this spy is called once');
 });
 
 test('it can call print from yielded action', function(assert) {
-  const jqueryStub = sinon.stub();
-  this.set('jQueryStub', jqueryStub);
   const printThisSpy = sinon.spy();
-
-  jqueryStub.withArgs('.content__printThis').returns({ printThis: printThisSpy });
+  this.set('printThis', {
+    print: printThisSpy
+  });
 
   this.render(hbs`
-    {{#print-this _jQuery=jQueryStub as |doPrint|}}
+    {{#print-this printThis=printThis as |doPrint|}}
       <p>Some block stuff</p>
       <button onclick={{doPrint}}>Heyo</button>
     {{/print-this}}
@@ -89,23 +67,4 @@ test('it can call print from yielded action', function(assert) {
 
   this.$('button').click();
   assert.equal(printThisSpy.callCount, 1, 'Print this spy is called once');
-});
-
-test('it calls printThis with options if specified', function(assert) {
-  const jqueryStub = sinon.stub();
-  this.set('jQueryStub', jqueryStub);
-  const options = { printDelay: 500 }
-  this.set('options', options);
-  const printThisSpy = sinon.spy();
-
-  jqueryStub.withArgs('.content__printThis').returns({ printThis: printThisSpy });
-
-  this.render(hbs`
-    {{#print-this options=options autoPrint=true _jQuery=jQueryStub}}
-      <p>Some block stuff</p>
-    {{/print-this}}
-  `);
-
-  assert.equal(printThisSpy.callCount, 1, 'Print this spy is called once');
-  assert.ok(printThisSpy.calledWith(options), 'Print this spy called with options hash');
 });

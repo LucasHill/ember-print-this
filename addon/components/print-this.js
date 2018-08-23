@@ -3,7 +3,9 @@ import layout from '../templates/components/print-this';
 
 export default Ember.Component.extend({
   layout,
+  printThis: Ember.inject.service(),
   defaultPrintClass: 'content__printThis',
+  classNameBindings: ['defaultPrintClass'],
   printSelector: null,
   autoPrint: false,
   options: null,
@@ -22,22 +24,6 @@ export default Ember.Component.extend({
   _print() {
     const printSelector = this.get('printSelector') || `.${this.get('defaultPrintClass')}`;
 
-    const environment = Ember.getOwner(this).resolveRegistration('config:environment');
-    const mergedOptions = this._constructPrintOptions(environment);
-
-    this._jQuery(printSelector).printThis(mergedOptions);
+    this.get('printThis').print(printSelector, this.get('options') || {}, this.$.bind(this));
   },
-
-  _constructPrintOptions(environment) {
-    const base = environment.rootURL || environment.baseURL;
-    const options = base === '/' ? { } : { base };
-
-    const userOptions = this.get('options') || {};
-    
-    return Ember.merge(options, userOptions)
-  },
-
-  _jQuery: function(toSelect) {
-    return this.$(toSelect);
-  }
 });
