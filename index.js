@@ -6,7 +6,7 @@ var MergeTrees = require('broccoli-merge-trees');
 var map = require('broccoli-stew').map;
 
 module.exports = {
-  name: 'ember-print-this',
+  name: require('./package').name,
 
   included(app) {
     this._super.included.apply(this, arguments);
