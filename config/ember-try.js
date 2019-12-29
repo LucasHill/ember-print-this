@@ -1,4 +1,3 @@
-/* eslint-env node */
 module.exports = {
   useYarn: true, //https://github.com/ember-cli/ember-try/issues/148
   scenarios: [
