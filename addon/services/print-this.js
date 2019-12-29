@@ -1,8 +1,11 @@
-import Ember from 'ember';
+import { merge } from '@ember/polyfills';
+import { getOwner } from '@ember/application';
+import $ from 'jquery';
+import Service from '@ember/service';
 
-export default Ember.Service.extend({
-  print(printSelector, options, jQuery = Ember.$) {
-    const environment = Ember.getOwner(this).resolveRegistration('config:environment');
+export default Service.extend({
+  print(printSelector, options, jQuery = $) {
+    const environment = getOwner(this).resolveRegistration('config:environment');
     const mergedOptions = this._constructPrintOptions(environment, options);
 
     this._selectElement(printSelector, jQuery).printThis(mergedOptions);
@@ -12,7 +15,7 @@ export default Ember.Service.extend({
     const base = environment.rootURL || environment.baseURL;
     const options = base === '/' ? { } : { base };
     
-    return Ember.merge(options, userOptions)
+    return merge(options, userOptions);
   },
 
   _selectElement: function(toSelect, jQuery) {

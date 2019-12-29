@@ -1,5 +1,7 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
-  options: { printDelay: 500 }
+export default Controller.extend({
+  get options() { 
+    return { printDelay: 500 };
+  }
 });

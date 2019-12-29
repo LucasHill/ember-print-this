@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import Component from '@ember/component';
 import layout from '../templates/components/print-this';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
-  printThis: Ember.inject.service(),
+  printThis: service(),
   defaultPrintClass: 'content__printThis',
   classNameBindings: ['defaultPrintClass'],
   printSelector: null,
