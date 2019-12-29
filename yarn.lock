@@ -2411,7 +2411,7 @@ ember-cli-dependency-checker@^2.0.0:
     resolve "^1.5.0"
     semver "^5.3.0"
 
-ember-cli-eslint@^4.0.0:
+ember-cli-eslint@^4.2.1:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/ember-cli-eslint/-/ember-cli-eslint-4.2.3.tgz#2844d3f5e8184f19b2d7132ba99eb0b370b55598"
   integrity sha512-1fqRz9QVLTT790Zr07aDFmAprZ1vVsaBGJOGQgDEFmBpogq8BeaQopaxogWFp748hol8nGC4QP5tbzhVD6KQHw==
@@ -2520,7 +2520,7 @@ ember-cli-preprocess-registry@^3.1.0:
     debug "^3.0.1"
     process-relative-require "^1.0.0"
 
-ember-cli-qunit@^4.0.0:
+ember-cli-qunit@^4.1.1:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/ember-cli-qunit/-/ember-cli-qunit-4.4.0.tgz#0edd7d651001d0d7ea200b9236a4733a5b7420f1"
   integrity sha512-+gkx380AV4WXYjQeIuQi675STL9K12fHFtxs8B9u3EFbw45vJKrnYR4Vph3FujxhE/1pr/Je8kZEPAuezZAVLw==
@@ -2545,7 +2545,7 @@ ember-cli-release@^1.0.0-beta.2:
     semver "^4.3.1"
     silent-error "^1.0.0"
 
-ember-cli-shims@^1.1.0:
+ember-cli-shims@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ember-cli-shims/-/ember-cli-shims-1.2.0.tgz#0f53aff0aab80b5f29da3a9731bac56169dd941f"
   integrity sha1-D1Ov8Kq4C18p2jqXMbrFYWndlB8=
@@ -2597,7 +2597,7 @@ ember-cli-valid-component-name@^1.0.0:
   dependencies:
     silent-error "^1.0.0"
 
-ember-cli-version-checker@^1.1.7, ember-cli-version-checker@^1.3.1:
+ember-cli-version-checker@^1.1.7:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/ember-cli-version-checker/-/ember-cli-version-checker-1.3.1.tgz#0bc2d134c830142da64bf9627a0eded10b61ae72"
   integrity sha1-C8LRNMgwFC2mS/lieg7e0QthrnI=
@@ -2612,10 +2612,10 @@ ember-cli-version-checker@^2.0.0, ember-cli-version-checker@^2.1.0, ember-cli-ve
     resolve "^1.3.3"
     semver "^5.3.0"
 
-ember-cli@~2.16.2:
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-2.16.2.tgz#53b922073a8e6f34255a6e0dcb1794a91ba3e1b7"
-  integrity sha1-U7kiBzqObzQlWm4NyxeUqRuj4bc=
+ember-cli@~2.17.2:
+  version "2.17.2"
+  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-2.17.2.tgz#101483d48dd295d297203160afcf3c44bcd47b75"
+  integrity sha1-EBSD1I3SldKXIDFgr888RLzUe3U=
   dependencies:
     amd-name-resolver "1.0.0"
     babel-plugin-transform-es2015-modules-amd "^6.24.0"
@@ -2687,7 +2687,7 @@ ember-cli@~2.16.2:
     promise-map-series "^0.2.1"
     quick-temp "^0.1.8"
     resolve "^1.3.0"
-    rsvp "^3.6.0"
+    rsvp "^4.7.0"
     sane "^1.6.0"
     semver "^5.1.1"
     silent-error "^1.0.0"
@@ -2767,10 +2767,10 @@ ember-sinon@^1.0.1:
     ember-cli-babel "^6.3.0"
     sinon "^3.2.1"
 
-ember-source@~2.16.0:
-  version "2.16.4"
-  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-2.16.4.tgz#d8d7317306a59a6981e151d5771c8976914b7738"
-  integrity sha1-2NcxcwalmmmB4VHVdxyJdpFLdzg=
+ember-source@~2.17.0:
+  version "2.17.2"
+  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-2.17.2.tgz#d4d186efe8653c0f6aa3fe297323e3d2db206819"
+  integrity sha1-1NGG7+hlPA9qo/4pcyPj0tsgaBk=
   dependencies:
     broccoli-funnel "^1.2.0"
     broccoli-merge-trees "^2.0.0"
@@ -2781,7 +2781,7 @@ ember-source@~2.16.0:
     ember-cli-string-utils "^1.1.0"
     ember-cli-test-info "^1.0.0"
     ember-cli-valid-component-name "^1.0.0"
-    ember-cli-version-checker "^1.3.1"
+    ember-cli-version-checker "^2.1.0"
     ember-router-generator "^1.2.3"
     fs-extra "^4.0.1"
     inflection "^1.12.0"
@@ -6848,12 +6848,12 @@ rimraf@~2.6.2:
   dependencies:
     glob "^7.1.3"
 
-rsvp@^3.0.14, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.6, rsvp@^3.1.0, rsvp@^3.2.1, rsvp@^3.3.3, rsvp@^3.6.0:
+rsvp@^3.0.14, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.6, rsvp@^3.1.0, rsvp@^3.2.1, rsvp@^3.3.3:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.6.2.tgz#2e96491599a96cde1b515d5674a8f7a91452926a"
   integrity sha512-OfWGQTb9vnwRjwtA2QwpG2ICclHC3pgXZO5xt8H2EfgDquO0qVdSb5T88L4qJVAEugbS56pAuV4XZM58UX8ulw==
 
-rsvp@^4.6.1, rsvp@^4.8.2, rsvp@^4.8.3:
+rsvp@^4.6.1, rsvp@^4.7.0, rsvp@^4.8.2, rsvp@^4.8.3:
   version "4.8.5"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.8.5.tgz#c8f155311d167f68f21e168df71ec5b083113734"
   integrity sha512-nfMOlASu9OnRJo1mbEk2cz0D56a1MBNrJ7orjRZQG10XDyuvwksKbuXNp6qa+kbn839HwjwhBzhFmdsaEAfauA==
