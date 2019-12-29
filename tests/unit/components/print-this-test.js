@@ -1,86 +1,86 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupTest } from 'ember-qunit';
 import sinon from 'sinon';
 
-moduleForComponent('print-this', 'Unit | Component | print this', {
-  needs: ['service:printThis'],
-  unit: true
-});
+module('Unit | Component | print this', function(hooks) {
+  setupTest(hooks);
 
-test('it prints when doPrint action called', function(assert) {
-  const printSpy = sinon.spy();
+  test('it prints when doPrint action called', function(assert) {
+    const printSpy = sinon.spy();
 
-  const component = this.subject({
-    _print: printSpy
+    const component = this.owner.factoryFor('component:print-this').create({
+      _print: printSpy
+    });
+
+    component.send('doPrint');
+    assert.equal(printSpy.callCount, 1);
   });
 
-  component.send('doPrint');
-  assert.equal(printSpy.callCount, 1);
-});
+  test('it calls print on element insert if auto print true', function(assert) {
+    const printSpy = sinon.spy();
 
-test('it calls print on element insert if auto print true', function(assert) {
-  const printSpy = sinon.spy();
+    const component = this.owner.factoryFor('component:print-this').create({
+      autoPrint: true,
+      _print: printSpy
+    });
 
-  const component = this.subject({
-    autoPrint: true,
-    _print: printSpy
+    component.didInsertElement();
+    assert.equal(printSpy.callCount, 1);
   });
 
-  component.didInsertElement();
-  assert.equal(printSpy.callCount, 1);
-});
+  test('it does not print on element insert if auto print false (default)', function(assert) {
+    const printSpy = sinon.spy();
 
-test('it does not print on element insert if auto print false (default)', function(assert) {
-  const printSpy = sinon.spy();
+    const component = this.owner.factoryFor('component:print-this').create({
+      _print: printSpy
+    });
 
-  const component = this.subject({
-    _print: printSpy
+    component.didInsertElement();
+    assert.equal(printSpy.callCount, 0);
   });
 
-  component.didInsertElement();
-  assert.equal(printSpy.callCount, 0);
-});
+  test('it calls service with correct default params on print', function(assert) {
+    const printThisSpy = sinon.spy();
+    const component = this.owner.factoryFor('component:print-this').create({
+      printThis: { print: printThisSpy }
+    });
 
-test('it calls service with correct default params on print', function(assert) {
-  const printThisSpy = sinon.spy();
-  const component = this.subject({
-    printThis: { print: printThisSpy }
+    component._print();
+
+    assert.equal(printThisSpy.callCount, 1);
+    assert.equal(printThisSpy.args[0][0], '');
+    assert.deepEqual(printThisSpy.args[0][1], {});
   });
 
-  component._print();
+  test('it uses passed in options on print', function(assert) {
+    const printThisSpy = sinon.spy();
+    const options = { foo: 'bar' };
 
-  assert.equal(printThisSpy.callCount, 1);
-  assert.equal(printThisSpy.args[0][0], '');
-  assert.deepEqual(printThisSpy.args[0][1], {});
-});
+    const component = this.owner.factoryFor('component:print-this').create({
+      printThis: { print: printThisSpy },
+      options,
+    });
 
-test('it uses passed in options on print', function(assert) {
-  const printThisSpy = sinon.spy();
-  const options = { foo: 'bar' };
+    component._print();
 
-  const component = this.subject({
-    printThis: { print: printThisSpy },
-    options,
+    assert.equal(printThisSpy.callCount, 1);
+    assert.equal(printThisSpy.args[0][0], '');
+    assert.deepEqual(printThisSpy.args[0][1], options);
   });
 
-  component._print();
+  test('it uses passed in selector on print', function(assert) {
+    const printThisSpy = sinon.spy();
+    const printSelector = 'foo';
 
-  assert.equal(printThisSpy.callCount, 1);
-  assert.equal(printThisSpy.args[0][0], '');
-  assert.deepEqual(printThisSpy.args[0][1], options);
-});
+    const component = this.owner.factoryFor('component:print-this').create({
+      printThis: { print: printThisSpy },
+      printSelector,
+    });
 
-test('it uses passed in selector on print', function(assert) {
-  const printThisSpy = sinon.spy();
-  const printSelector = 'foo';
+    component._print();
 
-  const component = this.subject({
-    printThis: { print: printThisSpy },
-    printSelector,
+    assert.equal(printThisSpy.callCount, 1);
+    assert.equal(printThisSpy.args[0][0], printSelector);
+    assert.deepEqual(printThisSpy.args[0][1], {});
   });
-
-  component._print();
-
-  assert.equal(printThisSpy.callCount, 1);
-  assert.equal(printThisSpy.args[0][0], printSelector);
-  assert.deepEqual(printThisSpy.args[0][1], {});
 });
