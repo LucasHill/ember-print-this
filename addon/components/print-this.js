@@ -25,6 +25,6 @@ export default Component.extend({
   _print() {
     const printSelector = this.get('printSelector') || '';
 
-    this.get('printThis').print(printSelector, this.get('options') || {}, this.$.bind(this));
+    this.get('printThis').print(printSelector, this.get('options') || {});
   },
 });
