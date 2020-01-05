@@ -11,7 +11,7 @@ module('Integration | Component | print this', function(hooks) {
 
     await render(hbs`{{print-this}}`);
 
-    assert.equal(find('*').textContent.trim(), '');
+    assert.dom('*').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -20,7 +20,7 @@ module('Integration | Component | print this', function(hooks) {
       {{/print-this}}
     `);
 
-    assert.equal(find('*').textContent.trim(), 'template block text');
+    assert.dom('*').hasText('template block text');
   });
 
   test('it auto prints the block template if specified', async function(assert) {
