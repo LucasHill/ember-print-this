@@ -22,6 +22,7 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
+    "@ember/jquery": "^1.1.0",
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^2.0.0",
     "broccoli-stew": "^1.5.0",
