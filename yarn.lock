@@ -3671,10 +3671,10 @@ ember-cli-version-checker@^3.0.0, ember-cli-version-checker@^3.0.1, ember-cli-ve
     resolve-package-path "^1.2.6"
     semver "^5.6.0"
 
-ember-cli@~3.11.0:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.11.0.tgz#05c055fde0803b2f4034a3b5a68daaed408e632d"
-  integrity sha512-YU+nGUZ3l3MbqW5BiFX9c9k3szgm41EPRGjFFLEXerOXuyFByRWYPBZDtBOGmtdWmZpiqv53JXYRweMANHWLvA==
+ember-cli@~3.12.0:
+  version "3.12.1"
+  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.12.1.tgz#b387c206d4091f91685ba7323ececbbcfb80282a"
+  integrity sha512-eYHU5+8ctqShI4XgJsG+C5lkDZW8c73XZu5xQqYNZfBZ10vTy3I6f5DwQ8c+29wtFSZ72COyorhgYWBZUVGfrw==
   dependencies:
     "@babel/core" "^7.4.3"
     "@babel/plugin-transform-modules-amd" "^7.2.0"
@@ -3730,7 +3730,7 @@ ember-cli@~3.11.0:
     git-repo-info "^2.1.0"
     glob "^7.1.4"
     heimdalljs "^0.2.6"
-    heimdalljs-fs-monitor "^0.2.2"
+    heimdalljs-fs-monitor "^0.2.3"
     heimdalljs-graph "^0.3.5"
     heimdalljs-logger "^0.1.10"
     http-proxy "^1.17.0"
@@ -3852,10 +3852,10 @@ ember-source-channel-url@^1.0.1, ember-source-channel-url@^1.1.0:
   dependencies:
     got "^8.0.1"
 
-ember-source@~3.11.1:
-  version "3.11.1"
-  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.11.1.tgz#2318fbe600c88d3a8abbf56fc2f3a61645ee42d8"
-  integrity sha512-FPHHHu/5FBbKQ3o1D2HXEIniBUVqG1N4vDB66BaP0ht2ZcO6EB3HMjGxVH8Ad3Of8QOcXtZrBfXDHZdIWLW4lQ==
+ember-source@~3.12.0:
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.12.2.tgz#e3a320e7b895d9e204985a1c6e74a46ef55975ed"
+  integrity sha512-mUxaeXkA2MTsgoxq3coSn+3AdiSHK594rCefd4+GWmCxzXaoyV7qeumu7Mcz7PIjJRqNuOBSvifZzIZjmCtc8Q==
   dependencies:
     broccoli-funnel "^2.0.2"
     broccoli-merge-trees "^3.0.2"
@@ -3870,7 +3870,7 @@ ember-source@~3.11.1:
     ember-router-generator "^1.2.3"
     inflection "^1.12.0"
     jquery "^3.4.1"
-    resolve "^1.10.1"
+    resolve "^1.11.1"
 
 ember-template-lint@^1.1.0:
   version "1.12.3"
@@ -5266,7 +5266,7 @@ hawk@~3.1.0:
     hoek "2.x.x"
     sntp "1.x.x"
 
-heimdalljs-fs-monitor@^0.2.2:
+heimdalljs-fs-monitor@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/heimdalljs-fs-monitor/-/heimdalljs-fs-monitor-0.2.3.tgz#1aedd4b1c61d86c51f6141fb75c5a3350dc41b15"
   integrity sha512-fYAvqSP0CxeOjLrt61B4wux/jqZzdZnS2xfb2oc14NP6BTZ8gtgtR2op6gKFakOR8lm8GN9Xhz1K4A1ZvJ4RQw==
