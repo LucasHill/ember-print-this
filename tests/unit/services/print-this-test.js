@@ -1,7 +1,6 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 import sinon from 'sinon';
-import Ember from 'ember';
 
 module('Unit | Service | print this', function(hooks) {
   setupTest(hooks);
@@ -62,41 +61,21 @@ module('Unit | Service | print this', function(hooks) {
     assert.equal(spy.args[0][0], 'foo');
   });
 
-  test('#print it calls printThis with correct default params', function(assert) {
-    const service = this.owner.lookup('service:print-this');
-    const selector = 'foo';
-    const printThisSpy = sinon.spy();
-    const options = { blah: 'bar' };
-
-    const jqueryStub = sinon.stub(Ember, '$').callsFake(function() {
-      return { printThis: printThisSpy }
-    });
-
-    service.print(selector, options);
-
-    assert.equal(jqueryStub.callCount, 1);
-    assert.equal(jqueryStub.args[0][0], selector);
-    
-    assert.equal(printThisSpy.callCount, 1);
-    assert.deepEqual(printThisSpy.args[0][0], options);
-    jqueryStub.restore();
-  });
-
   test('#print it calls printThis with overriden jquery object', function(assert) {
     const service = this.owner.lookup('service:print-this');
     const selector = 'foo';
     const printThisSpy = sinon.spy();
     const options = { blah: 'bar' };
 
-    const fauxEmber = {
+    const fauxJquery = {
       $: () => {}
     }
 
-    const jqueryStub = sinon.stub(fauxEmber, '$').callsFake(function() {
+    const jqueryStub = sinon.stub(fauxJquery, '$').callsFake(function() {
       return { printThis: printThisSpy }
     });
 
-    service.print(selector, options, fauxEmber.$);
+    service.print(selector, options, fauxJquery.$);
 
     assert.equal(jqueryStub.callCount, 1);
     assert.equal(jqueryStub.args[0][0], selector);
