@@ -6,6 +6,12 @@
 [![Ember Observer Score](http://emberobserver.com/badges/ember-print-this.svg)](http://emberobserver.com/addons/ember-print-this)
 
 Ember component wrapper for the great [printThis](https://github.com/jasonday/printThis) jQuery plugin.
+
+## Version 2.0
+There were no API changes between the 1.0 release and 2.0.
+The reason for the major version update was because I am
+no longer testing against ember versions older than 3.4.
+
 ## Installation
 
 Install `ember-print-this` into your ember-cli project via:
