@@ -85,7 +85,6 @@ export default Ember.Component.extend({
 * `git clone git@github.com:LucasHill/ember-print-this.git` this repository
 * `cd ember-print-this`
 * `npm install`
-* `bower install`
 
 ### Linting
 

@@ -6,7 +6,7 @@ module.exports = {
   remote: 'git@github.com:LucasHill/ember-print-this.git',
   annotation: "Release %@",
   message: "Bumped version to %@",
-  manifest: [ 'package.json', 'bower.json' ],
+  manifest: [ 'package.json' ],
   publish: true,
   format: 'YYYY-MM-DD',
   timezone: 'UTC'
