@@ -4,10 +4,10 @@
 // For details on each option run `ember help release`
 module.exports = {
   remote: 'git@github.com:LucasHill/ember-print-this.git',
-  annotation: "Release %@",
-  message: "Bumped version to %@",
-  manifest: [ 'package.json' ],
+  annotation: 'Release %@',
+  message: 'Bumped version to %@',
+  manifest: ['package.json'],
   publish: true,
   format: 'YYYY-MM-DD',
-  timezone: 'UTC'
+  timezone: 'UTC',
 };
