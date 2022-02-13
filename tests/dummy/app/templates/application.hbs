@@ -1,16 +1,38 @@
-<h1>Cool App Homepage</h1>
+{{page-title "Dummy"}}
+
+<h2 id="title">Cool App Homepage</h2>
 
 {{outlet}}
-{{#print-this options=options printSelector=".customContent" as |doPrint|}}
+<PrintThis @options={{this.options}} @printSelector=".customContent" as |doPrint|>
   <div class="customContent">
     <h1>Hello Printer!</h1>
   </div>
-  <button class="btn-1" onclick={{doPrint}}>Print Some!</button>
-{{/print-this}}
+  <button class="btn-1" type="button" {{on "click" doPrint}}>Print Some!</button>
+</PrintThis>
 
-{{#print-this options=options as |doPrint|}}
+<br><br><br><br>
+
+<PrintThis @options={{this.options}} @printSelector=".customContent" as |doPrint|>
+  <div class="customContent">
+    <h1>Item 1</h1>
+  </div>
+  <div class="customContent">
+    <h1>Item 2</h1>
+  </div>
+  <div class="customContent">
+    <h1>Item 3</h1>
+  </div>
+  <div>
+    <h1>Not Me</h1>
+  </div>
+  <button class="btn-1" type="button" {{on "click" doPrint}}>Print Some!</button>
+</PrintThis>
+
+<br><br><br><br>
+
+<PrintThis @options={{this.options}} as |doPrint|>
   <div class="customContent">
     <h1>Let's print it all!</h1>
   </div>
-  <button class="btn-2" onclick={{doPrint}}>Print All!</button>
-{{/print-this}}
+  <button class="btn-2" type="button" {{on "click" doPrint}}>Print All!</button>
+</PrintThis>
