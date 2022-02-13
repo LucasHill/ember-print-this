@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 
-export default Controller.extend({
-  get options() { 
+export default class ApplicationController extends Controller {
+  get options() {
     return { printDelay: 500 };
   }
-});
+}

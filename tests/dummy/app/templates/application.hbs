@@ -10,6 +10,26 @@
   <button class="btn-1" type="button" {{on "click" doPrint}}>Print Some!</button>
 </PrintThis>
 
+<br><br><br><br>
+
+<PrintThis @options={{this.options}} @printSelector=".customContent" as |doPrint|>
+  <div class="customContent">
+    <h1>Item 1</h1>
+  </div>
+  <div class="customContent">
+    <h1>Item 2</h1>
+  </div>
+  <div class="customContent">
+    <h1>Item 3</h1>
+  </div>
+  <div>
+    <h1>Not Me</h1>
+  </div>
+  <button class="btn-1" type="button" {{on "click" doPrint}}>Print Some!</button>
+</PrintThis>
+
+<br><br><br><br>
+
 <PrintThis @options={{this.options}} as |doPrint|>
   <div class="customContent">
     <h1>Let's print it all!</h1>
