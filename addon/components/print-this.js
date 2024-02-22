@@ -24,7 +24,7 @@ export default Component.extend({
   },
 
   _print() {
-    const printSelector = this.printSelector || '';
+    const printSelector = this.printSelector || this.element;
 
     this.printThis.print(printSelector, this.options || {});
   },
