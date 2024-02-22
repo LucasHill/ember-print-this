@@ -1,4 +1,3 @@
-import { assign } from '@ember/polyfills';
 import { getOwner } from '@ember/application';
 import $ from 'jquery';
 import Service from '@ember/service';
@@ -15,7 +14,7 @@ export default Service.extend({
     const base = environment.rootURL || environment.baseURL;
     const options = base === '/' ? { } : { base };
     
-    return assign(options, userOptions);
+    return Object.assign(options, userOptions);
   },
 
   _selectElement: function(toSelect, jQuery) {
