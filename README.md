@@ -7,6 +7,13 @@
 
 Ember component wrapper for the great [printThis](https://github.com/jasonday/printThis) jQuery plugin.
 
+## Version 2.1.0
+Removed usage of assign imported form '@ember/polyfill' causing issues with Ember 5
+
+Upgraded to Ember 3.28 to help with compatibility with Ember 5
+
+Upgrade to ember-auto-import 2.x to help with compatibility with Ember 5. Users of this addon must also use ember-auto-import 2.x
+
 ## Version 2.0
 There were no API changes between the 1.0 release and 2.0.
 The reason for the major version update was because I am
