@@ -13,18 +13,19 @@ export default Component.extend({
   actions: {
     doPrint() {
       this._print();
-    }
+    },
   },
 
   didInsertElement() {
-    if(this.get('autoPrint')) {
+    this._super(...arguments);
+    if (this.autoPrint) {
       this._print();
     }
   },
-  
-  _print() {
-    const printSelector = this.get('printSelector') || '';
 
-    this.get('printThis').print(printSelector, this.get('options') || {});
+  _print() {
+    const printSelector = this.printSelector || '';
+
+    this.printThis.print(printSelector, this.options || {});
   },
 });

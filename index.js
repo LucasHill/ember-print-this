@@ -18,12 +18,20 @@ module.exports = {
   },
 
   treeForVendor(vendorTree) {
-    var printThisTree = new Funnel(path.dirname(require.resolve('print-this/printThis.js')), {
-      files: ['printThis.js'],
-    });
+    var printThisTree = new Funnel(
+      path.dirname(require.resolve('print-this/printThis.js')),
+      {
+        files: ['printThis.js'],
+      }
+    );
 
-    printThisTree = map(printThisTree, content => `if (typeof FastBoot === 'undefined') { ${content} }`);
+    printThisTree = map(
+      printThisTree,
+      (content) => `if (typeof FastBoot === 'undefined') { ${content} }`
+    );
 
-    return vendorTree ? new MergeTrees([vendorTree, printThisTree]): printThisTree;
+    return vendorTree
+      ? new MergeTrees([vendorTree, printThisTree])
+      : printThisTree;
   },
 };

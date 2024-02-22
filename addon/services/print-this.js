@@ -4,7 +4,8 @@ import Service from '@ember/service';
 
 export default Service.extend({
   print(printSelector, options, jQuery = $) {
-    const environment = getOwner(this).resolveRegistration('config:environment');
+    const environment =
+      getOwner(this).resolveRegistration('config:environment');
     const mergedOptions = this._constructPrintOptions(environment, options);
 
     this._selectElement(printSelector, jQuery).printThis(mergedOptions);
@@ -12,12 +13,12 @@ export default Service.extend({
 
   _constructPrintOptions(environment = { rootURL: '/' }, userOptions = {}) {
     const base = environment.rootURL || environment.baseURL;
-    const options = base === '/' ? { } : { base };
-    
+    const options = base === '/' ? {} : { base };
+
     return Object.assign(options, userOptions);
   },
 
-  _selectElement: function(toSelect, jQuery) {
+  _selectElement: function (toSelect, jQuery) {
     return jQuery(toSelect);
-  }
+  },
 });

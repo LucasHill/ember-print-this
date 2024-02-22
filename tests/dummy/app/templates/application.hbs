@@ -1,16 +1,17 @@
+{{page-title "Ember Print This"}}
+
 <h1>Cool App Homepage</h1>
 
 {{outlet}}
-{{#print-this options=options printSelector=".customContent" as |doPrint|}}
+
+<PrintThis @options={{this.options}} @printSelector=".customContent" as |doPrint|>
   <div class="customContent">
     <h1>Hello Printer!</h1>
   </div>
-  <button class="btn-1" onclick={{doPrint}}>Print Some!</button>
-{{/print-this}}
+  <button class="btn-1" onclick={{doPrint}} type="button">Print Some!</button>
+</PrintThis>
 
-{{#print-this options=options as |doPrint|}}
-  <div class="customContent">
-    <h1>Let's print it all!</h1>
-  </div>
-  <button class="btn-2" onclick={{doPrint}}>Print All!</button>
-{{/print-this}}
+<PrintThis @options={{this.options}} as |doPrint|>
+  <h1>Let's print it all!</h1>
+  <button class="btn-2" onclick={{doPrint}} type="button">Print All!</button>
+</PrintThis>
